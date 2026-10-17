@@ -1,10 +1,10 @@
-# Dependencias y compilados
+﻿# Node / Dependencias
 node_modules/
-*.class
-target/
+npm-debug.log
 
-# Configuración local y secretos
-.env
+# Sistema Operativo y Editor
+.DS_Store
+Thumbs.db
 .vscode/
+.idea/
 *.log
-*.env
