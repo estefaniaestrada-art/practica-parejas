@@ -1,15 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Taller Git</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión</title>
+  <style>
+    body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; margin: 0; }
+    .login-card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; }
+    .form-group input { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    button { width: 100%; padding: 0.7rem; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+    .error { color: red; font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+  </style>
 </head>
 <body>
-<h1>Humberto Alvarez - Versión A y B</h1>
-  <p>Mi primera página con control de versiones.</p>
-  <a href="contacto.html">Contacto</a>
-  <a href="galeria.html">Galería</a>
-  <footer>Pie de página - humberto140</footer>
-  <footer><p>Desarrollado por Estefania Estrada - Rol B</p></footer>
+  <div class="login-card">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password">
+      </div>
+      <button type="submit">Ingresar</button>
+      <div id="errorMessage" class="error">Por favor, completa todos los campos.</div>
+    </form>
+  </div>
+  <footer>
+    <!-- Contacto: Estefania - Colaborador -->
+  </footer>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const errorDiv = document.getElementById('errorMessage');
+
+      if (user === '' || pass === '') {
+        errorDiv.style.display = 'block';
+      } else {
+        errorDiv.style.display = 'none';
+        alert('¡Inicio de sesión exitoso!');
+      }
+    });
+  </script>
 </body>
 </html>
